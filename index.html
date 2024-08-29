@@ -28,7 +28,7 @@
         .carousel-indicators {
             position: absolute;
             top: -20px; /* Position indicators above the slide */
-            left: 35%;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 15;
         }
@@ -49,29 +49,50 @@
         /* Ensure footer has no spacing around it */
         footer {
             padding: 0;
-            width:100%;
+            width: 100%;
             position: relative;
             margin: 0;
             background-color: #000;
         }
+        
         body {
             background-color: #000;
         }
     </style>
 </head>
 <body class="container d-flex flex-column min-vh-100">
-    <!-- First Grid: Logo & About -->
-    <div class="row mb-4">
-        <div class="col-md-6 bg-secondary text-center text-white py-4">
-            <img src="img/FB_logo_Submission.png" alt="Logo" class="img-fluid" style="max-width: 25%;">
-            <div class="mt-4">
-                <a href="#" class="btn btn-secondary btn-block mb-2">Home</a>
-                <a href="#work" class="btn btn-secondary btn-block mb-2">My Work</a>
-                <a href="#resume" class="btn btn-secondary btn-block mb-2">Resume</a>
-                <a href="#contact" class="btn btn-secondary btn-block mb-2">Contact</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/FB_logo_Submission.png" alt="Logo" class="img-fluid" style="max-width: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">My Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="col-md-6 bg-dark text-white py-4">
+    </nav>
+
+    <!-- First Grid: About Me -->
+    <div class="row mb-4">
+        <div class="col-md-12 bg-dark text-white py-4">
             <div class="text-center mb-4">
                 <img src="img/gitHub_Profile.jpeg" class="rounded-circle img-fluid" alt="Person" style="width: 30%;">
             </div>
