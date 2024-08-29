@@ -55,6 +55,27 @@
         .container > div:last-child {
             margin-bottom: 0;
         }
+                .carousel-indicators {
+            position: absolute;
+            top: -40px; /* Position indicators above the slide */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #007bff; /* Change indicator color */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #007bff; /* Change arrow color */
+        }
+
+        /* Optional: Add some padding to the bottom of the content to make space for the indicators */
+        .carousel-item {
+            padding-bottom: 40px;
+        }
     </style>
 </head>
 <body class="container">
