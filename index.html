@@ -82,10 +82,15 @@
     </div>
     <!-- Second Grid: Work & Resume -->
     <div class="row mb-4">
-        <div class="col-lg-6 bg-light text-center py-4" id="work">
+    <div class="col-lg-6 bg-light text-center py-4" id="work">
         <h2>My Work</h2>
         <p>Divine Gems, Demo Reel, Speed Sculpts & More.</p>
-        <div id="workCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="workCarousel" class="carousel slide" data-bs-interval="10000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <h3>Divine Gems</h3>
