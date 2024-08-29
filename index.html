@@ -1,251 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Messiah Studios Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width * 100) */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000; /* Fallback color in case the video doesn't load */
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messiah Studios Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
 
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-  /* Flexbox for specific sections */
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-  .flex-container > .w3-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    margin-bottom: 16px;
-  }
+        .flex-container > .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            margin-bottom: 16px;
+        }
 
-  /* Adjusting margins and padding for images, iframes, and text */
-  img {
-    margin-bottom: 16px;
-  }
+        img {
+            margin-bottom: 16px;
+        }
 
-  p {
-    margin-bottom: 16px;
-  }
+        p,
+        h3 {
+            margin-bottom: 16px;
+        }
 
-  .w3-container h3 {
-    margin-bottom: 16px;
-  }
+        .container > div {
+            margin-bottom: 32px;
+        }
 
-  .w3-container > div {
-    margin-bottom: 32px;
-  }
-
-  .w3-container > div:last-child {
-    margin-bottom: 0;
-  }
-</style>
+        .container > div:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
-<body class="w3-content" style="max-width:1300px">
-
-<!-- First Grid: Logo & About -->
-<div class="w3-row-padding w3-margin-bottom flex-container">
-  <div class="w3-col s12 m6 w3-blue-grey w3-container w3-center">
-    <div class="w3-padding-64">
-      <img src="img/FB_logo_Submission.png" alt="Logo" style="width:25%">
-    </div>
-    <div class="w3-padding-64">
-      <a href="#" class="w3-button w3-blue-grey w3-block w3-hover-blue-grey w3-padding-16">Home</a>
-      <a href="#work" class="w3-button w3-blue-grey w3-block w3-hover-teal w3-padding-16">My Work</a>
-      <a href="#resume" class="w3-button w3-blue-grey w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
-      <a href="#contact" class="w3-button w3-blue-grey w3-block w3-hover-brown w3-padding-16">Contact</a>
-    </div>
-  </div>
-  <div class="w3-col s12 m6 w3-black w3-container">
-    <div class="w3-padding-64 w3-center">
-      <img src="img/gitHub_Profile.jpeg" class="w3-margin w3-circle" alt="Person" style="width:30%">
-      <div class="w3-left-align w3-padding-large">
-        <p>I'm Kenneth James Mendoza, a web developer, digital artist, and 3D modeler based in Peoria, AZ. I specialize in creating interactive web experiences and developing applications that solve real-world problems.</p>
-        <p>My passion lies in building engaging and functional web applications, like the Divine Gems game you’ll find below. I hold a Bachelor of Arts in Media Arts and Animation from The Art Institute of Phoenix, and my professional experience includes an IMDb film credit and work in the industry.</p>
-        <p>In addition to my development work, I have 5 1/2 years of experience teaching in a public charter school system, and I am a licensed Empowerment Scholarship Account (ESA) vendor with the Arizona Department of Education. I am a highly qualified instructor with a Black Belt in Japanese Jiu-Jitsu (Sensei) and Brazilian Jiu-Jitsu (Professor with Instructor Bars).</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Second Grid: Work & Resume -->
-<div class="w3-row-padding w3-margin-bottom flex-container">
-  <div class="w3-col s12 l6 w3-light-grey w3-center" id="work">
-    <div class="w3-padding-64">
-      <h2>My Work</h2>
-      <p>Divine Gems, Demo Reel, Speed Sculpts & More.</p>
-    </div>
-    <div class="w3-row-padding">
-      <div class="w3-col s12 m6 l4 w3-container w3-margin-bottom">
-        <h3>Divine Gems</h3>
-        <img src="img/Divine_Gems_New_Look.png" style="width:100%"> <!-- Update this path -->
-        <p>A match-3 puzzle game built with HTML, CSS, and JavaScript. The game is designed for both desktop and mobile devices. It is ready as a Progressive Web App (PWA) and includes features like a loading screen, an install button, and future plans for keyboard and gamepad support.</p>
-        <a href="https://messiahstudios.github.io/divine-gems-game/" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16" target="_blank">Play Divine Gems</a>
-      </div>
-      <div class="w3-col s12 m6 l4 w3-container w3-margin-bottom">
-        <h3>Demo Reel</h3>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/wDkMv0dDz5E" frameborder="0" allowfullscreen></iframe>
+<body class="container">
+    <!-- First Grid: Logo & About -->
+    <div class="row mb-4">
+        <div class="col-md-6 bg-secondary text-center text-white py-4">
+            <img src="img/FB_logo_Submission.png" alt="Logo" class="img-fluid" style="max-width: 25%;">
+            <div class="mt-4">
+                <a href="#" class="btn btn-secondary btn-block mb-2">Home</a>
+                <a href="#work" class="btn btn-secondary btn-block mb-2">My Work</a>
+                <a href="#resume" class="btn btn-secondary btn-block mb-2">Resume</a>
+                <a href="#contact" class="btn btn-secondary btn-block mb-2">Contact</a>
+            </div>
         </div>
-      </div>
-      <div class="w3-col s12 m6 l4 w3-container w3-margin-bottom">
-        <h3>Speed Sculpt</h3>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/LmneJ1g5vYI?si=GiGnMRdMDDLbZqwB" frameborder="0" allowfullscreen></iframe>
+        <div class="col-md-6 bg-dark text-white py-4">
+            <div class="text-center mb-4">
+                <img src="img/gitHub_Profile.jpeg" class="rounded-circle img-fluid" alt="Person" style="width: 30%;">
+            </div>
+            <div class="text-start">
+                <p>I'm Kenneth James Mendoza, a web developer, digital artist, and 3D modeler based in Peoria, AZ. I specialize in creating interactive web experiences and developing applications that solve real-world problems.</p>
+                <p>My passion lies in building engaging and functional web applications, like the Divine Gems game you’ll find below. I hold a Bachelor of Arts in Media Arts and Animation from The Art Institute of Phoenix, and my professional experience includes an IMDb film credit and work in the industry.</p>
+                <p>In addition to my development work, I have 5 1/2 years of experience teaching in a public charter school system, and I am a licensed Empowerment Scholarship Account (ESA) vendor with the Arizona Department of Education. I am a highly qualified instructor with a Black Belt in Japanese Jiu-Jitsu (Sensei) and Brazilian Jiu-Jitsu (Professor with Instructor Bars).</p>
+            </div>
         </div>
-      </div> 
     </div>
-    <p>Check out more of my work on <a href="https://github.com/MessiahStudios" target="_blank">GitHub</a>.</p>
-  </div>
-  <div class="w3-col s12 l6 w3-indigo w3-container" id="resume">
-    <div class="w3-padding-64 w3-center">
-      <h2>Resume</h2>
-      <p>Snippet of my CV (View The Full Resume on <a href="https://www.linkedin.com/in/kennethjamesmendoza/" target="_blank"><i class="fab fa-linkedin"></i></a>)</p>
-      <div class="w3-container w3-responsive">
-        <table class="w3-table">
-          <tr>
-            <th>Year</th>
-            <th>Title</th>
-            <th>Where</th>
-          </tr>
-          <tr class="w3-white">
-            <td>2013-Present</td>
-            <td>Full Stack Web, Digital Art, Animation</td>
-            <td>Messiah Studios | Remote</td>
-          </tr>
-          <tr>
-            <td>2010-Present</td>
-            <td>Teaching Jiu-Jitsu (Japanese and Brazilian)</td>
-            <td>Jaguars Jiu-Jitsu | Phoenix and Peoria, AZ</td>
-          </tr>
-          <tr class="w3-white">
-            <td>July 2022 - December 2023</td>
-            <td>Middle School Art Teacher</td>
-            <td>Arizona Charter Academy | Surprise, AZ</td>
-          </tr>
-          <tr>
-            <td>July 2021 - July 2022</td>
-            <td>Martial Arts Instructor</td>
-            <td>BASIS Phoenix Central | Downtown Phoenix, AZ</td>
-          </tr>
-          <tr class="w3-white">
-            <td>September 2021 - October 2021</td>
-            <td>Jiu-Jitsu Instructor</td>
-            <td>Cannon Brazilian Jiu-Jitsu | Glendale AZ</td>
-          </tr>
-          <tr>
-            <td>April 2017 - May 2020</td>
-            <td>Art Teacher & Computer Science</td>
-            <td>Brighton Charter School | Glendale, AZ</td>
-          </tr>
-          <tr class="w3-white">
-            <td>July 2017 - August 2017</td>
-            <td>Web Developer</td>
-            <td>Brighton Charter School | Glendale, AZ</td>
-          </tr>
-          <tr>
-            <td>May 2016 - February 2017</td>
-            <td>Art Instructor</td>
-            <td>Phoenix Center for the Arts (Thunderbird Location) | Phoenix, AZ</td>
-          </tr>
-          <tr class="w3-white">
-            <td>September 2014 - June 2016</td>
-            <td>Technical Animator</td>
-            <td>Mantecoza (Feature Film) | Remote</td>
-          </tr>
-          <tr>
-            <td>December 2014 - January 2016</td>
-            <td>Instructor</td>
-            <td>Freshi Media| Phoenix (Surrounding Areas), AZ</td>
-          </tr>
-           <tr class="w3-white">
-            <td>January 2015 - January 2015</td>
-            <td>Quality Assurance Analyst - Internship</td>
-            <td>Digital Dream Forge | Scottsdale, AZ</td>
-          </tr>
-          <tr>
-            <td>December 2010 - January 2012</td>
-            <td>Instructor</td>
-            <td>Arizona Family Karate Academy | Phoenix, AZ</td>
-          </tr>
-        </table>
-      </div>
+    <!-- Second Grid: Work & Resume -->
+    <div class="row mb-4">
+        <div class="col-lg-6 bg-light text-center py-4" id="work">
+            <h2>My Work</h2>
+            <p>Divine Gems, Demo Reel, Speed Sculpts & More.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3>Divine Gems</h3>
+                    <img src="img/Divine_Gems_New_Look.png" class="img-fluid" alt="Divine Gems">
+                    <p>A match-3 puzzle game built with HTML, CSS, and JavaScript. The game is designed for both desktop and mobile devices. It is ready as a Progressive Web App (PWA) and includes features like a loading screen, an install button, and future plans for keyboard and gamepad support.</p>
+                    <a href="https://messiahstudios.github.io/divine-gems-game/" class="btn btn-dark btn-block" target="_blank">Play Divine Gems</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h3>Demo Reel</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/wDkMv0dDz5E" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h3>Speed Sculpt</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/LmneJ1g5vYI?si=GiGnMRdMDDLbZqwB" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <p>Check out more of my work on <a href="https://github.com/MessiahStudios" target="_blank">GitHub</a>.</p>
+        </div>
+        <div class="col-lg-6 bg-primary text-white py-4" id="resume">
+            <h2>Resume</h2>
+            <p>Snippet of my CV (View The Full Resume on <a href="https://www.linkedin.com/in/kennethjamesmendoza/" class="text-white" target="_blank"><i class="fab fa-linkedin"></i></a>)</p>
+            <div class="table-responsive bg-light text-dark p-3">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Where</th>
+                    </tr>
+                    <tr>
+                        <td>2013-Present</td>
+                        <td>Full Stack Web, Digital Art, Animation</td>
+                        <td>Messiah Studios | Remote</td>
+                    </tr>
+                    <tr>
+                        <td>2010-Present</td>
+                        <td>Teaching Jiu-Jitsu (Japanese and Brazilian)</td>
+                        <td>Jaguars Jiu-Jitsu | Phoenix and Peoria, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>July 2022 - December 2023</td>
+                        <td>Middle School Art Teacher</td>
+                        <td>Arizona Charter Academy | Surprise, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>July 2021 - July 2022</td>
+                        <td>Martial Arts Instructor</td>
+                        <td>BASIS Phoenix Central | Downtown Phoenix, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>September 2021 - October 2021</td>
+                        <td>Jiu-Jitsu Instructor</td>
+                        <td>Cannon Brazilian Jiu-Jitsu | Glendale AZ</td>
+                    </tr>
+                    <tr>
+                        <td>April 2017 - May 2020</td>
+                        <td>Art Teacher & Computer Science</td>
+                        <td>Brighton Charter School | Glendale, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>July 2017 - August 2017</td>
+                        <td>Web Developer</td>
+                        <td>Brighton Charter School | Glendale, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>May 2016 - February 2017</td>
+                        <td>Art Instructor</td>
+                        <td>Phoenix Center for the Arts (Thunderbird Location) | Phoenix, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>September 2014 - June 2016</td>
+                        <td>Technical Animator</td>
+                        <td>Mantecoza (Feature Film) | Remote</td>
+                    </tr>
+                    <tr>
+                        <td>December 2014 - January 2016</td>
+                        <td>Instructor</td>
+                        <td>Freshi Media | Phoenix (Surrounding Areas), AZ</td>
+                    </tr>
+                    <tr>
+                        <td>January 2015 - January 2015</td>
+                        <td>Quality Assurance Analyst - Internship</td>
+                        <td>Digital Dream Forge | Scottsdale, AZ</td>
+                    </tr>
+                    <tr>
+                        <td>December 2010 - January 2012</td>
+                        <td>Instructor</td>
+                        <td>Arizona Family Karate Academy | Phoenix, AZ</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <!-- Third Grid: Swing By & Contact -->
+    <div class="row mb-4" id="contact">
+        <div class="col-lg-4 bg-dark text-white text-center py-4">
+            <h1>Have A Project</h1>
+            <p>I’m always interested in new projects and collaborations.</p>
+            <p>Remote Work Preferred</p>
+            <p>Find me on:</p>
+            <p>
+                <a href="https://x.com/Messiah_Studios" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-x-twitter"></i> X</a>
+                <a href="https://github.com/MessiahStudios" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.instagram.com/jaguarsjiujitsu/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.facebook.com/Messiah.Studios.Social/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://www.youtube.com/channel/UC_FZ9hdaRTOFAo-TBtc1fGw" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-youtube"></i> YouTube</a>
+            </p>
+        </div>
+        <div class="col-lg-4 bg-secondary text-white py-4">
+            <h1>Remote Education Available</h1>
+            <p>I would love to teach Digital Art, 3D Sculpting, Animation (2D or 3D) & Web Design</p>
+            <p>I have a special invite-only group on <a href="https://www.facebook.com/share/g/xPLaE3mVzTKcM17E/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-facebook"></i> Facebook</a></p>
+        </div>
+        <div class="col-lg-4 bg-info text-white py-4">
+            <h1>Contact</h1>
+            <p class="text-opacity">EMAIL ME DIRECTLY</p>
+            <p><a href="mailto:messiahstudiosphx@gmail.com" class="btn btn-outline-light btn-sm">Contact Me</a></p>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center bg-dark text-white py-3">
+        <p>Powered by <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" class="text-white" target="_blank">Bootstrap 5</a></p>
+    </footer>
 
-<!-- Third Grid: Swing By & Contact -->
-<div class="w3-row-padding w3-margin-bottom flex-container" id="contact">
-  <div class="w3-col s12 m6 l4 w3-dark-grey w3-container w3-center">
-    <div class="w3-padding-64">
-      <h1>Have A Project</h1>
-    </div>
-    <div class="w3-padding-64">
-      <p>I’m always interested in new projects and collaborations.</p>
-      <p>Remote Work Preferred</p>
-      <p>Find me on:</p>
-      <p>
-        <a href="https://x.com/Messiah_Studios" target="_blank" class="w3-button w3-black w3-hover-blue-grey w3-margin-right">
-          <i class="fab fa-x-twitter"></i> X
-        </a>
-        <a href="https://github.com/MessiahStudios" target="_blank" class="w3-button w3-black w3-hover-teal w3-margin-right">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://www.instagram.com/jaguarsjiujitsu/" target="_blank" class="w3-button w3-black w3-hover-purple w3-margin-right">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://www.facebook.com/Messiah.Studios.Social/" target="_blank" class="w3-button w3-black w3-hover-blue w3-margin-right">
-          <i class="fab fa-facebook"></i> Facebook
-        </a>
-        <a href="https://www.youtube.com/channel/UC_FZ9hdaRTOFAo-TBtc1fGw" target="_blank" class="w3-button w3-black w3-hover-red">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
-      </p>
-    </div>
-  </div>
-  <div class="w3-col s12 m6 l4 w3-container">
-    <div class="w3-padding-64">
-    <h1>Remote Education Available</h1>
-    <p>I would love to teach Digital Art, 3D Sculpting, Animation (2D or 3D) & Web Design</p>
-    <p>I have a special invite-only group on <a href="https://www.facebook.com/share/g/xPLaE3mVzTKcM17E/" target="_blank" class="w3-button w3-black w3-hover-blue w3-margin-right">
-          <i class="fab fa-facebook"></i> Facebook
-        </a></p>
-  </div>
-  </div>
-  <div class="w3-col s12 m6 l4 w3-teal w3-container">
-    <div class="w3-padding-64 w3-padding-large">
-      <h1>Contact</h1>
-      <p class="w3-opacity">EMAIL ME DIRECTLY</p>
-      <p><a href="mailto:messiahstudiosphx@gmail.com" class="w3-button w3-teal w3-hover-light-grey">Contact Me</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
