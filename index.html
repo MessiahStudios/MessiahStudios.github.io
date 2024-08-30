@@ -45,6 +45,11 @@
         .carousel-item {
             padding-bottom: 40px;
         }
+        
+        #playDivineGemsBtn {
+            position: relative;
+            z-index: 20; /* Ensures it's above other elements */
+        }
 
         /* Ensure footer has no spacing around it */
         footer {
@@ -130,7 +135,7 @@
                         <h3>Divine Gems</h3>
                         <img src="img/Divine_Gems_New_Look.png" class="d-block w-100 img-fluid" alt="Divine Gems">
                         <p>A match-3 puzzle game built with HTML, CSS, and JavaScript. The game is designed for both desktop and mobile devices. It is ready as a Progressive Web App (PWA) and includes features like a loading screen, an install button, and future plans for keyboard and gamepad support.</p>
-                        <a href="https://messiahstudios.github.io/divine-gems-game/" class="btn btn-dark btn-block" target="_blank">Play Divine Gems</a>
+                        <a id="playDivineGemsBtn" href="https://messiahstudios.github.io/divine-gems-game/" class="btn btn-dark btn-block" target="_blank">Play Divine Gems</a>
                     </div>
                     <div class="carousel-item">
                         <h3>Demo Reel</h3>
