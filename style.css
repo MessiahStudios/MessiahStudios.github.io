@@ -1,9 +1,12 @@
 /* =========================================================
-   MessiahStudios.github.io — Bootstrap + Custom Theme Layer
-   Keep Bootstrap for layout/components. Use this for polish.
+   MessiahStudios.github.io — Bootstrap-first overrides
    ========================================================= */
 
-/* --- Base --- */
+:root {
+  /* Sticky nav offset for anchor jumps (adjust if needed) */
+  scroll-padding-top: 90px;
+}
+
 html, body {
   height: 100%;
 }
@@ -11,28 +14,54 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  background: #000; /* matches your vibe */
+  background: #000;
 }
 
-/* Improve anchor jump so sticky navbar doesn't cover headings */
-:root {
-  scroll-padding-top: 90px; /* tweak if navbar height changes */
+/* ---- Navbar safety (prevents “disappearing behind” embeds) ---- */
+.navbar {
+  z-index: 1030; /* Bootstrap’s typical top layer */
 }
 
-/* Use sections for spacing only (don’t add backgrounds/margins globally) */
+/* Optional polish: stop logo from inflating navbar height */
+.navbar-brand img {
+  max-height: 48px;
+  width: auto;
+}
+
+/* =========================================================
+   Anchor Spacer Sections 
+    <section id="work"></section>  (empty)
+   Making those act as invisible anchor offsets WITHOUT
+   creating giant visual gaps / weird layout.
+   ========================================================= */
+
+/* Only style EMPTY sections (false anchors). This is the key. */
+section:empty {
+  display: block;
+  height: 80px;     /* “old look” spacing */
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* If whitespace sneaks into the section, :empty fails.
+   This keeps it stable if that happens. */
 section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-/* --- Media Embeds (YouTube + Facebook) --- */
+/* =========================================================
+   Media Embeds
+   ========================================================= */
 .video-wrapper {
   max-width: 80%;
   margin: 0 auto;
   position: relative;
 }
 
-/* Responsive 16:9 embed container */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -40,7 +69,7 @@ section {
   overflow: hidden;
   max-width: 100%;
   background: #000;
-  border-radius: 12px; /* subtle polish */
+  border-radius: 12px;
 }
 
 .video-container iframe {
@@ -51,12 +80,13 @@ section {
   border: 0;
 }
 
-/* --- Carousel Tweaks --- */
+/* =========================================================
+   Carousel tweaks
+   ========================================================= */
 .carousel-item {
   padding: 20px 0;
 }
 
-/* Keep indicators above the video */
 .carousel-indicators {
   position: absolute;
   top: -20px;
@@ -66,10 +96,9 @@ section {
 }
 
 .carousel-indicators [data-bs-target] {
-  background-color: #0d6efd; /* Bootstrap primary */
+  background-color: #0d6efd;
 }
 
-/* Make arrows visible on the light section */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #0d6efd;
@@ -82,19 +111,19 @@ section {
   z-index: 20;
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
   margin: 0;
   width: 100%;
   background: #000;
 }
 
-/* --- Links --- */
+/* Links */
 a:hover {
   text-decoration: underline;
 }
 
-/* --- Optional: small motion polish (safe + subtle) --- */
+/* Small motion polish */
 @media (prefers-reduced-motion: no-preference) {
   .btn,
   .nav-link {
