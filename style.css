@@ -1,38 +1,106 @@
+/* =========================================================
+   MessiahStudios.github.io — Bootstrap + Custom Theme Layer
+   Keep Bootstrap for layout/components. Use this for polish.
+   ========================================================= */
+
+/* --- Base --- */
+html, body {
+  height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  background: #000; /* matches your vibe */
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* Improve anchor jump so sticky navbar doesn't cover headings */
+:root {
+  scroll-padding-top: 90px; /* tweak if navbar height changes */
 }
 
+/* Use sections for spacing only (don’t add backgrounds/margins globally) */
 section {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
+/* --- Media Embeds (YouTube + Facebook) --- */
+.video-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Responsive 16:9 embed container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 12px; /* subtle polish */
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Carousel Tweaks --- */
+.carousel-item {
+  padding: 20px 0;
+}
+
+/* Keep indicators above the video */
+.carousel-indicators {
+  position: absolute;
+  top: -20px;
+  left: 35%;
+  transform: translateX(-50%);
+  z-index: 15;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #0d6efd; /* Bootstrap primary */
+}
+
+/* Make arrows visible on the light section */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0d6efd;
+  border-radius: 6px;
+}
+
+/* Button z-index safety */
+#playDivineGemsBtn {
+  position: relative;
+  z-index: 20;
+}
+
+/* --- Footer --- */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
+  margin: 0;
+  width: 100%;
+  background: #000;
 }
 
-a {
-    color: #1a73e8;
-    text-decoration: none;
-}
-
+/* --- Links --- */
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* --- Optional: small motion polish (safe + subtle) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .btn,
+  .nav-link {
+    transition: transform 120ms ease, opacity 120ms ease;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+  }
 }
