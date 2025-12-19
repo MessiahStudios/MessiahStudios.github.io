@@ -35,10 +35,14 @@ body {
    creating giant visual gaps / weird layout.
    ========================================================= */
 
+section[id] {
+  scroll-margin-top: 110px; /* matches navbar height */
+}
+
 /* Only style EMPTY sections (false anchors). This is the key. */
 section:empty {
   display: block;
-  height: 80px;     /* “old look” spacing */
+ 
   margin: 0;
   padding: 0;
   background: transparent;
