@@ -1,9 +1,8 @@
 /* =========================================================
-   MessiahStudios.github.io — Bootstrap-first overrides
+   MessiahStudios.github.io - Bootstrap-first overrides
    ========================================================= */
 
 :root {
-  /* Sticky nav offset for anchor jumps (adjust if needed) */
   scroll-padding-top: 90px;
 }
 
@@ -17,39 +16,76 @@ body {
   background: #000;
 }
 
-/* ---- Navbar safety (prevents “disappearing behind” embeds) ---- */
+/* ---- Navbar: fixed position with compact padding ---- */
 .navbar {
-  z-index: 1030; /* Bootstrap’s typical top layer */
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
-/* Optional polish: stop logo from inflating navbar height */
-.navbar-brand img {
-  max-height: 48px;
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 80px;
+}
+
+/* Create stacking context for main content below navbar */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure iframes and video containers stay below navbar */
+iframe {
+  position: relative;
+  z-index: 1;
+}
+
+.video-container,
+.video-wrapper {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/* Carousel needs to stay in its stacking context */
+.carousel {
+  position: relative;
+  z-index: 1;
+}
+
+/* Site logo sizing */
+.site-logo {
+  height: 70px;
   width: auto;
 }
 
+
+@media (max-width: 768px) {
+  .site-logo {
+    height: 50px;
+  }
+}
+
 /* =========================================================
-   Anchor Spacer Sections 
-    <section id="work"></section>  (empty)
-   Making those act as invisible anchor offsets WITHOUT
-   creating giant visual gaps / weird layout.
+   Anchor Spacer Sections
    ========================================================= */
 
 section[id] {
-  scroll-margin-top: 110px; /* matches navbar height */
+  scroll-margin-top: 110px;
 }
 
-/* Only style EMPTY sections (false anchors). This is the key. */
 section:empty {
   display: block;
- 
   margin: 0;
   padding: 0;
   background: transparent;
 }
 
-/* If whitespace sneaks into the section, :empty fails.
-   This keeps it stable if that happens. */
 section {
   display: block;
   margin: 0;
@@ -125,6 +161,29 @@ footer {
 /* Links */
 a:hover {
   text-decoration: underline;
+}
+
+/* Profile image responsive sizing */
+.profile-image {
+  width: 30%;
+  min-width: 150px;
+  max-width: 300px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 50%;
+  }
+  
+  .video-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
 }
 
 /* Small motion polish */
