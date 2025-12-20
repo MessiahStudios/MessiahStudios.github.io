@@ -124,7 +124,7 @@ section {
    Carousel tweaks
    ========================================================= */
 .carousel-item {
-  padding: 20px 0;
+  padding: 20px 80px;
 }
 
 .carousel-indicators {
@@ -139,10 +139,18 @@ section {
   background-color: #0d6efd;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  opacity: 1;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #0d6efd;
   border-radius: 6px;
+  width: 30px;
+  height: 30px;
 }
 
 /* Button z-index safety */
