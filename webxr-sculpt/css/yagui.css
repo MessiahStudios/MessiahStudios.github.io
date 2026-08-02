@@ -1,0 +1,743 @@
+/* WebXR Sculpt — desktop yagui chrome
+ * Shared tokens so topbar dropdowns + sidebar stay consistent.
+ */
+
+:root {
+  /* Brand accents sampled from docs/media/webxr-sculpt-logo.png */
+  --gui-bg-deep: #16181e;
+  --gui-bg-bar: #1c1e24;
+  --gui-bg-panel: #2a2d36;
+  --gui-bg-elevated: #32363f;
+  --gui-bg-widget: rgba(0, 0, 0, 0.35);
+  --gui-bg-widget-hover: rgba(0, 0, 0, 0.48);
+  --gui-accent: #58a8f0;
+  --gui-accent-soft: rgba(88, 168, 240, 0.18);
+  --gui-accent-glow: #51d1f8;
+  --gui-accent-warm: #f7974b;
+  --gui-accent-warm-soft: rgba(247, 151, 75, 0.18);
+  --gui-accent-warm-bright: #ffc48a;
+  --gui-border: rgba(140, 160, 200, 0.22);
+  --gui-border-strong: rgba(140, 160, 200, 0.38);
+  --gui-text: #c8d0e0;
+  --gui-text-dim: #8b95a8;
+  --gui-text-bright: #f0f3fa;
+  --gui-radius: 8px;
+  --gui-radius-sm: 5px;
+  --gui-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  --gui-font: 'Open Sans', 'Segoe UI', sans-serif;
+}
+
+* {
+  font: 13px/1.35 var(--gui-font);
+  color: var(--gui-text);
+  font-weight: 400;
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  background: var(--gui-bg-deep);
+}
+
+#tablet-plugin {
+  position: absolute;
+  top: -1000px;
+}
+
+#viewport {
+  position: absolute;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+/****** SIDE BAR ******/
+
+.gui-sidebar {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  padding: 6px 0 24px 0;
+  width: 310px;
+  background: linear-gradient(180deg, #2e313a 0%, var(--gui-bg-panel) 48%, #262930 100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid var(--gui-border-strong);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.28);
+}
+
+.gui-sidebar::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.gui-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(160, 180, 210, 0.28);
+}
+
+.gui-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 180, 210, 0.42);
+}
+
+.gui-sidebar::-webkit-scrollbar-corner {
+  height: 0;
+  display: none;
+}
+
+.gui-resize {
+  cursor: ew-resize;
+  position: absolute;
+  left: 310px;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  margin-left: -3px;
+  margin-right: -3px;
+  opacity: 0;
+}
+
+
+/****** folder ******/
+
+.gui-sidebar > ul > label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gui-text-dim);
+  position: relative;
+  display: block;
+  line-height: 32px;
+  margin: 6px 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--gui-border);
+  border-radius: var(--gui-radius-sm);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.gui-sidebar > ul > label:hover {
+  color: var(--gui-text-bright);
+  background: var(--gui-accent-soft);
+  border-color: rgba(88, 168, 240, 0.35);
+}
+
+.gui-sidebar > ul[opened=true] > label {
+  color: var(--gui-accent);
+  border-color: rgba(88, 168, 240, 0.4);
+}
+
+.gui-sidebar > ul[opened=true] > label:before {
+  content: '▼';
+  text-indent: 0.85em;
+  float: left;
+  color: var(--gui-accent);
+}
+
+.gui-sidebar > ul[opened=false] > label:before {
+  content: '►';
+  text-indent: 0.85em;
+  float: left;
+}
+
+.gui-sidebar > ul {
+  display: block;
+  list-style: none;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease;
+  -moz-transition: max-height 0.3s ease;
+  -ms-transition: max-height 0.3s ease;
+  -o-transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease;
+}
+
+.gui-sidebar > ul[opened=true] {
+  /* Form & Paint + alpha gallery exceed the old 1600px cap (clipped content + how-to PNGs). */
+  max-height: 20000px;
+}
+
+.gui-sidebar > ul[opened=false] {
+  height: 44px;
+  max-height: 44px;
+}
+
+.gui-sidebar > ul > li {
+  height: 24px;
+  margin: 5px 10px;
+  border-radius: var(--gui-radius-sm);
+}
+
+/* Alpha stamp gallery — must grow past the default row height */
+.gui-sidebar > ul > li.sculptgl-alpha-gallery {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 8px 10px 12px 10px !important;
+}
+
+/* Hidden combobox — kept for hotkeys / setValue sync */
+.gui-sidebar > ul > li.sculptgl-tool-select-hidden,
+li.sculptgl-tool-select-hidden {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Form / Paint tool icon grids */
+.gui-sidebar > ul > li.sculptgl-tool-icons {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 6px 8px 10px 8px !important;
+  padding: 0 !important;
+}
+
+.sculptgl-tool-icons-root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.sculptgl-tool-icons-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 2px 6px 2px;
+  color: var(--gui-text-dim);
+}
+
+.sculptgl-tool-icons-section.is-form .sculptgl-tool-icons-heading {
+  color: var(--gui-accent);
+}
+
+.sculptgl-tool-icons-section.is-paint .sculptgl-tool-icons-heading {
+  color: var(--gui-accent-warm);
+}
+
+.sculptgl-tool-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.sculptgl-tool-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin: 0;
+  padding: 4px 2px 5px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: #1a1e28;
+  cursor: pointer;
+  color: var(--gui-text);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.sculptgl-tool-icon-btn img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  pointer-events: none;
+  background: #12151c;
+}
+
+.sculptgl-tool-icon-cap {
+  font-size: 10px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--gui-text-dim);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 2px;
+}
+
+.sculptgl-tool-icon-btn:hover {
+  background: var(--gui-accent-soft);
+  border-color: rgba(88, 168, 240, 0.35);
+}
+
+.sculptgl-tool-icon-btn.is-selected {
+  border-color: var(--gui-accent);
+  background: rgba(88, 168, 240, 0.16);
+}
+
+.sculptgl-tool-icon-btn.is-selected .sculptgl-tool-icon-cap {
+  color: var(--gui-text-bright);
+}
+
+.sculptgl-tool-icons-section.is-paint .sculptgl-tool-icon-btn.is-selected {
+  border-color: var(--gui-accent-warm);
+  background: var(--gui-accent-warm-soft);
+}
+
+.gui-glowOnHover:hover {
+  background: var(--gui-accent-soft);
+}
+
+.gui-pointerOnHover:hover {
+  cursor: pointer;
+}
+
+
+/****** label ******/
+
+.gui-label-side {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 36%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--gui-text-dim);
+  line-height: 24px;
+  padding-left: 2px;
+}
+
+
+/****** checkbox ******/
+
+.gui-input-checkbox {
+  display: none;
+}
+
+.gui-input-checkbox + label {
+  float: right;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--gui-border-strong);
+  border-radius: var(--gui-radius-sm);
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  background: var(--gui-bg-widget);
+}
+
+.gui-input-checkbox:checked + label {
+  border-color: var(--gui-accent);
+  background: var(--gui-accent-soft);
+}
+
+.gui-input-checkbox + label::before {
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  height: 14px;
+  width: 6px;
+  border-right: 2px solid var(--gui-accent);
+  border-bottom: 2px solid var(--gui-accent);
+  -webkit-transform: rotate(60deg) skew(25deg, 0);
+  -ms-transform: rotate(60deg) skew(25deg, 0);
+  transform: rotate(60deg) skew(25deg, 0);
+}
+
+.gui-input-checkbox:checked + label::before {
+  content: '';
+}
+
+
+/****** input number ******/
+
+.gui-input-number {
+  -moz-appearance: textfield;
+  float: right;
+  position: relative;
+  width: 10%;
+  height: 100%;
+  margin-left: 2%;
+  text-align: center;
+  outline: none;
+  font-size: 11px;
+  color: var(--gui-text-bright);
+  border-radius: var(--gui-radius-sm);
+  background: var(--gui-bg-widget);
+  border: 1px solid transparent;
+}
+
+.gui-widget-color > input::-webkit-inner-spin-button,
+.gui-widget-color > input::-webkit-outer-spin-button,
+.gui-input-number::-webkit-inner-spin-button,
+.gui-input-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/****** input on hover ******/
+
+.gui-slider:hover,
+.gui-input-number:hover {
+  background: var(--gui-bg-widget-hover);
+  border-color: var(--gui-border);
+}
+
+
+/****** slider ******/
+
+.gui-slider {
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  float: right;
+  width: 52%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--gui-radius-sm);
+  background: var(--gui-bg-widget);
+  border: 1px solid transparent;
+}
+
+.gui-slider > div {
+  height: 100%;
+  background: linear-gradient(90deg, #3a6a9a, var(--gui-accent));
+}
+
+
+/****** button ******/
+
+.gui-button {
+  -webkit-appearance: none;
+  float: right;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: var(--gui-radius-sm);
+  background: var(--gui-bg-elevated);
+  border: 1px solid var(--gui-border);
+  color: var(--gui-text);
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.gui-button::-moz-focus-inner {
+  padding: 0 !important;
+  border: 0 none !important;
+}
+
+.gui-button:enabled:hover {
+  color: var(--gui-text-bright);
+  background: var(--gui-accent-soft);
+  border-color: rgba(88, 168, 240, 0.4);
+}
+
+.gui-button:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+.gui-button:disabled {
+  background: #3a3d46;
+  color: #666;
+  border-color: transparent;
+}
+
+
+/****** widget color ******/
+
+.gui-widget-color {
+  float: right;
+  display: block;
+  width: 64%;
+  height: 100%;
+}
+
+.gui-widget-color > input {
+  -moz-appearance: textfield;
+  position: relative;
+  display: inline;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  outline: none;
+  border-radius: var(--gui-radius-sm);
+  font-size: 13px;
+  background: #f00;
+  border: 1px solid var(--gui-border);
+}
+
+.gui-widget-color > input + div:hover,
+.gui-widget-color > input:hover + div {
+  display: block;
+  pointer-events: auto;
+}
+
+.gui-widget-color > input + div {
+  display: none;
+  position: absolute;
+  pointer-events: none;
+  padding: 6px;
+  width: 125px;
+  height: 105px;
+  z-index: 2;
+  background: var(--gui-bg-deep);
+  border: 1px solid var(--gui-border-strong);
+  border-radius: var(--gui-radius);
+  box-shadow: var(--gui-shadow);
+}
+
+
+/* saturation */
+
+.gui-color-saturation {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-right: 3px;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+.gui-color-saturation > div {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: none;
+  background: none;
+}
+
+.gui-knob-saturation {
+  position: absolute;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  z-index: 4;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+
+/* hue*/
+
+.gui-color-hue {
+  display: inline-block;
+  width: 15px;
+  height: 100px;
+  border: 1px solid #555;
+  cursor: ns-resize;
+}
+
+.gui-knob-hue {
+  pointer-events: none;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  border-right: 4px solid #fff;
+}
+
+
+/* alpha */
+
+.gui-color-alpha {
+  display: inline-block;
+  margin-left: 3px;
+  height: 100px;
+  width: 15px;
+  border: 1px solid #555;
+  cursor: ns-resize;
+}
+
+.gui-knob-alpha {
+  pointer-events: none;
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  border-right: 4px solid #fff;
+}
+
+
+/****** select ******/
+
+.gui-select {
+  float: right;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 64%;
+  height: 100%;
+  padding-left: 4px;
+  outline: none;
+  background: var(--gui-bg-elevated);
+  border: 1px solid var(--gui-border);
+  border-radius: var(--gui-radius-sm);
+  color: var(--gui-text);
+  /* Native popup often uses a light OS panel; keep dark so option text stays readable. */
+  color-scheme: dark;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.gui-select:hover {
+  color: var(--gui-text-bright);
+  background: var(--gui-accent-soft);
+  border-color: rgba(88, 168, 240, 0.4);
+}
+
+.gui-select option,
+.gui-select optgroup {
+  background-color: #2a2e38;
+  color: #e8ecf4;
+}
+
+.gui-select option:checked,
+.gui-select option:hover {
+  background-color: #3d6a9e;
+  color: #ffffff;
+}
+
+
+/****** TOP BAR ******/
+
+.gui-topbar {
+  position: absolute;
+  background: linear-gradient(180deg, #22252d 0%, var(--gui-bg-bar) 100%);
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  z-index: 1;
+  float: left;
+  border-bottom: 1px solid var(--gui-border);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.gui-topbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gui-topbar ul > li {
+  float: left;
+  line-height: 40px;
+  padding: 0 14px;
+  position: relative;
+  cursor: pointer;
+  color: var(--gui-text-dim);
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.gui-topbar ul > li .shortcut {
+  float: right;
+  font-style: oblique;
+  margin-right: 8px;
+  color: var(--gui-text-dim);
+  font-size: 11px;
+}
+
+.gui-topbar ul > li:hover {
+  color: var(--gui-text-bright);
+  background: var(--gui-accent-soft);
+}
+
+.gui-topbar ul > li:hover > ul {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  top: 38px;
+  transform: translateY(0);
+}
+
+.gui-topbar ul > li > ul {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: var(--gui-bg-deep);
+  width: 280px;
+  padding: 10px 8px 12px;
+  border-radius: 0 0 var(--gui-radius) var(--gui-radius);
+  border: 1px solid var(--gui-border-strong);
+  border-top: 2px solid rgba(88, 168, 240, 0.55);
+  box-shadow: var(--gui-shadow);
+  pointer-events: none;
+  opacity: 0;
+  max-height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateY(-4px);
+  -webkit-transition: 0.15s opacity ease, 0.15s top ease, 0.15s transform ease;
+  -ms-transition: 0.15s opacity ease, 0.15s top ease, 0.15s transform ease;
+  -moz-transition: 0.15s opacity ease, 0.15s top ease, 0.15s transform ease;
+  -o-transition: 0.15s opacity ease, 0.15s top ease, 0.15s transform ease;
+  transition: 0.15s opacity ease, 0.15s top ease, 0.15s transform ease;
+}
+
+/* Kept for Camera.js back-compat; all menus are wide now */
+.gui-topbar ul > li > ul.gui-topbar-menu-wide {
+  width: 280px;
+}
+
+.gui-topbar ul > li > ul::-webkit-scrollbar {
+  width: 7px;
+}
+
+.gui-topbar ul > li > ul::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(160, 180, 210, 0.3);
+}
+
+.gui-topbar ul > li > ul > li {
+  float: none;
+  height: auto;
+  min-height: 24px;
+  line-height: 18px;
+  margin: 3px 2px;
+  padding: 5px 8px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border-radius: var(--gui-radius-sm);
+  color: var(--gui-text);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.gui-topbar ul > li > ul > li:hover {
+  background: var(--gui-accent-soft);
+  color: var(--gui-text-bright);
+}
+
+.group-title {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gui-accent) !important;
+  cursor: default !important;
+  text-align: left !important;
+  border-bottom: 1px solid var(--gui-border);
+  padding: 8px 8px 6px !important;
+  margin: 8px 2px 6px !important;
+  background: transparent !important;
+  min-height: 0 !important;
+}
+
+.group-title:hover {
+  background: transparent !important;
+  color: var(--gui-accent) !important;
+}
