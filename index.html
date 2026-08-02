@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messiah Studios Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messiah Studios — Interactive Media &amp; Custom Web</title>
+  <meta name="description" content="Kenneth James Mendoza / Messiah Studios — custom websites, interactive media, animation, and WebXR. Hire for creative tech or request a website quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="d-flex flex-column min-vh-100"
       data-bs-spy="scroll"
@@ -15,296 +18,276 @@
       data-bs-offset="110"
       tabindex="0">
 
-    <!-- Navigation Bar -->
-    <nav id="mainNav" class="navbar navbar-expand-md navbar-dark bg-secondary mb-4">
-
+  <nav id="mainNav" class="navbar navbar-expand-md navbar-dark mb-0">
     <div class="container-fluid d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="#">
-            <img src="img/FB_logo_Submission.png" alt="Logo" class="img-fluid site-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#work">My Work</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#resume">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#project">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#education">Remote Lessons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#home">
+        <img src="img/FB_logo_Submission.png" alt="Messiah Studios" class="img-fluid site-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lessons">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
-<main class="container">
+  </nav>
 
-    <!-- First Grid: About Me -->
-     <section id="home">
-    <div class="row mb-5">
-        <div class="col-md-12 bg-dark text-white py-4">
-            <div class="text-center mb-4">
-                <img src="img/gitHub_Profile.jpeg" class="rounded-circle img-fluid profile-image" alt="Person">
-            </div>
-            <div class="text-start">
-    <h2 class="mb-3">Storyteller crafting narrative worlds through music, animation, and digital media.</h2>
-
-    <p>
-        I’m Kenneth James Mendoza — a storyteller at heart, exploring meaning, faith, and the human experience
-        through original music, animation, comics, and interactive media.
-    </p>
-
-    <p>
-        By day, I teach art in public education to serve students and provide for my family.
-        Beyond the classroom, I build story-driven projects through <strong>Messiah Studios</strong>,
-        spanning music, animated shorts, comics, and experimental digital experiences.
-    </p>
-
-    <p>
-        I also use web development and UX as tools to support storytelling and education,
-        taking on select freelance work when aligned, and offering remote creative instruction
-        for the homeschooling community.
-    </p>
-<div class="mt-4">
-  <a href="#work" class="btn btn-outline-light me-2 mb-2">Explore My Work</a>
-  <a href="/webxr-sculpt/" class="btn btn-outline-light me-2 mb-2">WebXR Sculpt</a>
-  <a href="#project" class="btn btn-outline-light me-2 mb-2">Paid Services</a>
-  <a href="#education" class="btn btn-outline-light mb-2">Remote Lessons</a>
-</div>
-
-</div>
-
-        </div>
-    </div>
-</section>
-    <!-- Second Grid: Work -->
-    <section id="work">
-    <div class="row mb-5">
-        <div class="col-md-12 bg-light text-center py-4">
-            <h2>My Work</h2>
-            <p>Games, Animation, Digital Art, and Interactive Media.</p>
-            <div id="workCarousel" class="carousel slide" data-bs-interval="10000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <h3>Divine Gems</h3>
-                        <p>A match-3 puzzle game built with HTML, CSS, and JavaScript. The game is designed for both desktop and mobile devices. It is ready as a Progressive Web App (PWA) and includes features like a loading screen, an install button, and future plans for keyboard and gamepad support.</p>
-      <div class="video-wrapper mx-auto mb-4" style="width: 80%; position: relative;">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/cqa1aFXKQRY" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        </div>
-                        <a style="padding-top: 4px;" id="playDivineGemsBtn" href="https://messiahstudios.github.io/divine-gems-game/" class="btn btn-dark btn-block" target="_blank">Play Divine Gems</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>WebXR Sculpt</h3>
-                        <p>Digital clay in the browser for Meta Quest and desktop — sculpt, paint, and work in mixed reality. Open on Quest Browser over HTTPS, or use full Desktop UI anytime.</p>
-                        <img src="/webxr-sculpt/resources/brand/webxr-sculpt-logo.png" alt="WebXR Sculpt" class="img-fluid mx-auto d-block mb-3" style="max-width: 220px;">
-                        <a href="/webxr-sculpt/" class="btn btn-dark btn-block">Launch WebXR Sculpt</a>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Demo Reel</h3>
-                        <!-- Outer div with specific width and centered -->
-                        <div class="video-wrapper mx-auto" style="width: 80%; position: relative;">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/wDkMv0dDz5E" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Speed Sculpt</h3>
-                        <!-- Outer div with specific width and centered -->
-                        <div class="video-wrapper mx-auto" style="width: 80%; position: relative;">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/LmneJ1g5vYI?si=GiGnMRdMDDLbZqwB" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#workCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#workCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <p class="mt-4">Check out more of my coding skills on <a href="https://github.com/MessiahStudios" target="_blank">GitHub</a>.</p>
-        </div>
-    </div>
-        </section>
-         <!-- Third Grid: Resume -->
-        <section id="resume">
-<div class="row mb-5">
-        <div class="col-md-12 bg-primary text-center text-white py-4">
-            <h2>Resume</h2>
-            <p>Snippet of my CV (View The Full Resume on <a href="https://www.linkedin.com/in/kennethjamesmendoza/" class="text-white" target="_blank"><i class="fab fa-linkedin"></i></a>)</p>
-            <div class="table-responsive bg-light text-dark p-3">
-                <table class="table table-hover">
-                    <tr>
-                        <th>Year</th>
-                        <th>Title</th>
-                        <th>Where</th>
-                    </tr>
-                    <tr>
-                        <td>2013-Present</td>
-                        <td>Full Stack Web, Digital Art, Animation</td>
-                        <td>Messiah Studios | Remote</td>
-                    </tr>
-                    <tr>
-                        <td>2010-Present</td>
-                        <td>Teaching Jiu-Jitsu (Japanese and Brazilian)</td>
-                        <td>Jaguars Jiu-Jitsu | Phoenix and Peoria, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>December 2024 - Present</td>
-                        <td>Art Teacher (K-8)</td>
-                        <td>Glendale Elementary School District No.40 | Glendale, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>July 2022 - December 2023</td>
-                        <td>Middle School Art Teacher</td>
-                        <td>Arizona Charter Academy | Surprise, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>July 2021 - July 2022</td>
-                        <td>Martial Arts Instructor</td>
-                        <td>BASIS Phoenix Central | Downtown Phoenix, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>September 2021 - October 2021</td>
-                        <td>Jiu-Jitsu Instructor</td>
-                        <td>Cannon Brazilian Jiu-Jitsu | Glendale AZ</td>
-                    </tr>
-                    <tr>
-                        <td>April 2017 - May 2020</td>
-                        <td>Art Teacher & Computer Science</td>
-                        <td>Brighton Charter School | Glendale, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>July 2017 - August 2017</td>
-                        <td>Web Developer</td>
-                        <td>Brighton Charter School | Glendale, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>May 2016 - February 2017</td>
-                        <td>Art Instructor</td>
-                        <td>Phoenix Center for the Arts (Thunderbird Location) | Phoenix, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>September 2014 - June 2016</td>
-                        <td>Technical Animator</td>
-                        <td>Mantecoza (Feature Film) | Remote</td>
-                    </tr>
-                    <tr>
-                        <td>December 2014 - January 2016</td>
-                        <td>Instructor</td>
-                        <td>Freshi Media | Phoenix (Surrounding Areas), AZ</td>
-                    </tr>
-                    <tr>
-                        <td>January 2015 - January 2015</td>
-                        <td>Quality Assurance Analyst - Internship</td>
-                        <td>Digital Dream Forge | Scottsdale, AZ</td>
-                    </tr>
-                    <tr>
-                        <td>December 2010 - January 2012</td>
-                        <td>Instructor</td>
-                        <td>Arizona Family Karate Academy | Phoenix, AZ</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-        </section>
-    <!-- Fourth Grid: Projects -->
-    <section id="project">
-    <div class="row mb-5">
-        <div class="col-md-12 bg-dark text-white text-center py-4">
-            <h1>Services</h1>
-<p class="mb-3">
-  I specialize in upgrading outdated websites and CMS builds into clean, modern, custom websites using
-  <strong>HTML, CSS, and JavaScript</strong>.
-</p>
-
-<ul class="list-unstyled mb-4">
-  <li class="mb-2"><i class="fas fa-check me-2"></i>CMS-to-custom rebuilds (legacy or bloated setups)</li>
-  <li class="mb-2"><i class="fas fa-check me-2"></i>Mockup → website (responsive, production-ready)</li>
-  <li class="mb-2"><i class="fas fa-check me-2"></i>Performance + clarity-focused redesigns</li>
-  <li class="mb-2"><i class="fas fa-check me-2"></i>Clean, maintainable code (no “plugin soup”)</li>
-</ul>
-
-<p class="mb-3">
-  <strong>Paid work only.</strong> I don’t take unpaid trials or “for exposure” projects.
-  I’m happy to scope and quote based on your goals and timeline.
-</p>
-
-<p>
-  <a href="mailto:messiahstudiosphx@gmail.com?subject=Website%20Modernization%20Quote%20Request&body=Hi%20Kenneth%2C%0A%0AWebsite%20URL%3A%20%0AGoal%3A%20%0ATimeline%3A%20%0ABudget%20range%3A%20%0A%0AThanks!"
-     class="btn btn-outline-light btn-sm">
-    Request a Quote
-  </a>
-</p>
-
-        </div>
-        </div>
-        </section>
-     <!-- Fifth Grid: Education -->
-    <section id="education">
-    <div class="row mb-5">
-        <div class="col-md-12 bg-secondary text-white text-center py-4">
-            <h1>Remote Education Available</h1>
-            <p>I would love to teach Digital Art, 3D Sculpting, Animation (2D or 3D) & Web Design</p>
-            <div class="video-wrapper mx-auto" style="max-width: 560px;">
-                <div class="video-container">
-                    <iframe src="https://www.facebook.com/plugins/video.php?height=297&href=https%3A%2F%2Fwww.facebook.com%2Fkenneth.mendoza.568%2Fvideos%2F708762724765383%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                </div>
-            </div>
-
-            <p>I have a special invite-only group on <a href="https://www.facebook.com/share/g/xPLaE3mVzTKcM17E/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-facebook"></i> Facebook</a></p>
-        </div>
-        </div>
-        </section>
-    <!-- Sixth Grid: Contact -->
-    <section id="contact">
-    <div class="row mb-5">
-        <div class="col-md-12 bg-info text-white text-center py-4">
-            <h1>Contact</h1>
-            <p class="text-opacity">EMAIL ME DIRECTLY</p>
-            <p><a href="mailto:messiahstudiosphx@gmail.com" class="btn btn-outline-light btn-sm">Contact Me</a></p>
-        </div>
-    </div>
-    </section>
-    </main>
-    <!-- Footer -->
-    <footer class="text-center bg-dark text-white py-3 mt-auto">
-        <p>Find me on: 
-                <a href="https://x.com/Messiah_Studios" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-x-twitter"></i> X</a>
-                <a href="https://github.com/MessiahStudios" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.instagram.com/jaguarsjiujitsu/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://www.facebook.com/Messiah.Studios.Social/" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="https://www.youtube.com/channel/UC_FZ9hdaRTOFAo-TBtc1fGw" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-youtube"></i> YouTube</a>
+  <main>
+    <!-- Hero: brand + hybrid value + two paths -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="brand-mark">Messiah Studios</p>
+            <h1>Interactive media &amp; custom websites that carry a story.</h1>
+            <p class="hero-lead">
+              I’m Kenneth James Mendoza — creative technologist and founder of Messiah Studios.
+              I build playable experiences, modern sites, and digital art for clients —
+              and I’m open to hire for interactive / web / animation roles.
             </p>
-        <p>Powered by <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" class="text-white" target="_blank">Bootstrap 5</a></p>
-    </footer>
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-studio-primary">View work</a>
+              <a href="mailto:messiahstudiosphx@gmail.com?subject=Website%20Quote%20Request&body=Hi%20Kenneth%2C%0A%0AWebsite%20URL%3A%20%0AGoal%3A%20%0ATimeline%3A%20%0ABudget%20range%3A%20%0A%0AThanks!"
+                 class="btn btn-studio-secondary">Request a quote</a>
+              <a href="mailto:messiahstudiosphx@gmail.com?subject=Hiring%20Inquiry%20—%20Messiah%20Studios&body=Hi%20Kenneth%2C%0A%0ARole%20%2F%20project%3A%20%0AWhy%20I%20reached%20out%3A%20%0ATimeline%3A%20%0A%0AThanks!"
+                 class="btn btn-studio-ghost">Hiring inquiry</a>
+            </div>
+          </div>
+          <div class="hero-portrait">
+            <img src="img/gitHub_Profile.jpeg" class="profile-image" alt="Kenneth James Mendoza, founder of Messiah Studios">
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Work: proof first -->
+    <section id="work" class="section-block section-work">
+      <div class="container">
+        <header class="section-head">
+          <h2>Selected work</h2>
+          <p>Games, WebXR, animation, and digital sculpture — proof before the pitch.</p>
+        </header>
+
+        <div class="work-grid">
+          <article class="work-item">
+            <h3>WebXR Sculpt</h3>
+            <p>Digital clay in the browser for Meta Quest and desktop — sculpt and paint in mixed reality.</p>
+            <img src="/webxr-sculpt/resources/brand/webxr-sculpt-logo.png" alt="" class="work-thumb" width="160" height="160">
+            <a href="/webxr-sculpt/" class="btn btn-studio-primary btn-sm">Launch WebXR Sculpt</a>
+          </article>
+
+          <article class="work-item">
+            <h3>Divine Gems</h3>
+            <p>A match-3 puzzle game as a Progressive Web App — playable on desktop and mobile.</p>
+            <div class="video-wrapper work-video">
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/cqa1aFXKQRY" title="Divine Gems gameplay" allowfullscreen loading="lazy"></iframe>
+              </div>
+            </div>
+            <a href="https://messiahstudios.github.io/divine-gems-game/" class="btn btn-studio-primary btn-sm" target="_blank" rel="noopener noreferrer">Play Divine Gems</a>
+          </article>
+
+          <article class="work-item">
+            <h3>Demo reel</h3>
+            <p>Animation and digital media highlights — the fastest way to see range and craft.</p>
+            <div class="video-wrapper work-video">
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/wDkMv0dDz5E" title="Messiah Studios demo reel" allowfullscreen loading="lazy"></iframe>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <h3>Speed sculpt</h3>
+            <p>3D sculpting process work — form, timing, and digital clay under a clock.</p>
+            <div class="video-wrapper work-video">
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LmneJ1g5vYI" title="Speed sculpt" allowfullscreen loading="lazy"></iframe>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="work-foot">
+          More code and experiments on
+          <a href="https://github.com/MessiahStudios" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hybrid paths: clients + hire -->
+    <section id="services" class="section-block section-services">
+      <div class="container">
+        <header class="section-head">
+          <h2>How we can work together</h2>
+          <p>Two clear paths — client projects or employment / contract roles.</p>
+        </header>
+
+        <div class="path-grid">
+          <div class="path-panel">
+            <p class="path-label">For clients</p>
+            <h3>Custom websites &amp; rebuilds</h3>
+            <p>
+              I turn outdated sites and bloated CMS builds into clean, modern, custom websites
+              with HTML, CSS, and JavaScript — responsive, maintainable, and built for clarity.
+            </p>
+            <ul class="path-list">
+              <li>CMS-to-custom rebuilds</li>
+              <li>Mockup → production-ready site</li>
+              <li>Performance and content-focused redesigns</li>
+              <li>No plugin soup — code you can keep</li>
+            </ul>
+            <p class="path-note"><strong>Paid work only.</strong> No unpaid trials or “for exposure” projects. Happy to scope and quote from your goals and timeline.</p>
+            <a href="mailto:messiahstudiosphx@gmail.com?subject=Website%20Quote%20Request&body=Hi%20Kenneth%2C%0A%0AWebsite%20URL%3A%20%0AGoal%3A%20%0ATimeline%3A%20%0ABudget%20range%3A%20%0A%0AThanks!"
+               class="btn btn-studio-primary">Request a quote</a>
+          </div>
+
+          <div class="path-panel path-panel-hire">
+            <p class="path-label">For hiring</p>
+            <h3>Creative technology roles</h3>
+            <p>
+              Looking for someone who can ship interactive web, support animation pipelines,
+              or bridge art and engineering? I bring classroom clarity, studio discipline, and hands-on shipping.
+            </p>
+            <ul class="path-list">
+              <li>Interactive / front-end web</li>
+              <li>WebXR &amp; real-time 3D experiences</li>
+              <li>Technical animation &amp; digital sculpting</li>
+              <li>Art + CS instruction and mentoring</li>
+            </ul>
+            <p class="path-note">Full résumé and recommendations on LinkedIn. Flagship credits below.</p>
+            <div class="path-actions">
+              <a href="https://www.linkedin.com/in/kennethjamesmendoza/" class="btn btn-studio-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+              </a>
+              <a href="mailto:messiahstudiosphx@gmail.com?subject=Hiring%20Inquiry%20—%20Messiah%20Studios&body=Hi%20Kenneth%2C%0A%0ARole%20%2F%20project%3A%20%0AWhy%20I%20reached%20out%3A%20%0ATimeline%3A%20%0A%0AThanks!"
+                 class="btn btn-studio-secondary">Hiring inquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated experience -->
+    <section id="experience" class="section-block section-experience">
+      <div class="container">
+        <header class="section-head">
+          <h2>Experience highlights</h2>
+          <p>
+            Selected roles — full history on
+            <a href="https://www.linkedin.com/in/kennethjamesmendoza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+          </p>
+        </header>
+
+        <div class="table-responsive experience-table-wrap">
+          <table class="table experience-table">
+            <thead>
+              <tr>
+                <th scope="col">Years</th>
+                <th scope="col">Role</th>
+                <th scope="col">Where</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2013–Present</td>
+                <td>Founder — web, digital art, animation</td>
+                <td>Messiah Studios · Remote</td>
+              </tr>
+              <tr>
+                <td>2024–Present</td>
+                <td>Art Teacher (K–8)</td>
+                <td>Glendale Elementary School District · Glendale, AZ</td>
+              </tr>
+              <tr>
+                <td>2022–2023</td>
+                <td>Middle School Art Teacher</td>
+                <td>Arizona Charter Academy · Surprise, AZ</td>
+              </tr>
+              <tr>
+                <td>2017–2020</td>
+                <td>Art Teacher &amp; Computer Science</td>
+                <td>Brighton Charter School · Glendale, AZ</td>
+              </tr>
+              <tr>
+                <td>2014–2016</td>
+                <td>Technical Animator</td>
+                <td>Mantecoza (feature film) · Remote</td>
+              </tr>
+              <tr>
+                <td>2010–Present</td>
+                <td>Jiu-Jitsu Instructor</td>
+                <td>Jaguars Jiu-Jitsu · Phoenix &amp; Peoria, AZ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lessons: secondary path -->
+    <section id="lessons" class="section-block section-lessons">
+      <div class="container">
+        <header class="section-head">
+          <h2>Remote creative lessons</h2>
+          <p>Digital art, 3D sculpting, 2D/3D animation, and web design — including support for homeschool families.</p>
+        </header>
+        <div class="lessons-layout">
+          <div class="video-wrapper lessons-video">
+            <div class="video-container">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=297&href=https%3A%2F%2Fwww.facebook.com%2Fkenneth.mendoza.568%2Fvideos%2F708762724765383%2F&show_text=false&width=560&t=0"
+                      title="Remote lessons introduction"
+                      allowfullscreen
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="lessons-copy">
+            <p>Prefer a private invite community? Join the Facebook group for lesson updates and creative prompts.</p>
+            <a href="https://www.facebook.com/share/g/xPLaE3mVzTKcM17E/" class="btn btn-studio-secondary" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook group
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-block section-contact">
+      <div class="container text-center">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p>Tell me whether you’re a client, hiring manager, or student — I’ll reply with next steps.</p>
+        </header>
+        <div class="contact-actions">
+          <a href="mailto:messiahstudiosphx@gmail.com?subject=Hello%20from%20messiahstudios.site"
+             class="btn btn-studio-primary btn-lg">Email Kenneth</a>
+        </div>
+        <p class="contact-email">messiahstudiosphx@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">Messiah Studios</p>
+      <p class="footer-social">
+        <a href="https://x.com/Messiah_Studios" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/MessiahStudios" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/Messiah.Studios.Social/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UC_FZ9hdaRTOFAo-TBtc1fGw" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/kennethjamesmendoza/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </p>
+      <p class="footer-note">Phoenix, Arizona · Story, craft, and interactive media</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
