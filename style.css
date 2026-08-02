@@ -8,12 +8,19 @@
   --bg-elevated: #161311;
   --bg-panel: #1c1814;
   --text: #f3ece4;
-  --text-muted: #b7aaa0;
+  --text-muted: #c4b8ad;
   --line: rgba(243, 236, 228, 0.12);
   --accent: #c4a574;
   --accent-strong: #e0c090;
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  /* Override Bootstrap color tokens so dark theme stays readable */
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-secondary-color: var(--text-muted);
+  --bs-heading-color: var(--text);
+  --bs-link-color: var(--accent-strong);
+  --bs-link-hover-color: #f0d9b0;
 }
 
 html, body {
