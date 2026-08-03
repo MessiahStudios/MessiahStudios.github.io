@@ -65,13 +65,15 @@ body {
 }
 
 .site-logo {
-  height: 64px;
+  height: 56px;
   width: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.35);
 }
 
 @media (max-width: 768px) {
   .site-logo {
-    height: 48px;
+    height: 44px;
   }
   body {
     padding-top: 64px;
