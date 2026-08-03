@@ -486,6 +486,12 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.contact-social-note {
+  color: var(--text-muted);
+  margin: 0.85rem 0 0;
+  font-size: 0.95rem;
+}
+
 /* ---- Media embeds ---- */
 .video-wrapper {
   max-width: 100%;
