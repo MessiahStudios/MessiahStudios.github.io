@@ -312,6 +312,13 @@ a:hover {
   opacity: 0.95;
 }
 
+.work-thumb-bereans {
+  width: 160px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.28);
+}
+
 .work-video {
   max-width: 100%;
   width: 100%;
