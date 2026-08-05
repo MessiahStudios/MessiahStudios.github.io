@@ -293,6 +293,13 @@ a:hover {
   flex: 0 0 auto;
 }
 
+.work-meta {
+  color: var(--accent) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .work-item .btn {
   align-self: flex-start;
   margin-top: auto;
